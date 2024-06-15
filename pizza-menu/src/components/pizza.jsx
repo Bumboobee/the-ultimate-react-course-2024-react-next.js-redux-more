@@ -1,14 +1,12 @@
-import {
-  PizzaCard,
-  PizzaImage,
-  PizzaInfo,
-  PizzaAbout,
-  PizzaReview,
-} from "../style/global";
+import { PizzaCard, PizzaImage, PizzaInfo, PizzaAbout, PizzaReview } from "../style/global";
 import StarFull from "/assets/star-full.svg";
 import StartEmpty from "/assets/star-empty.svg";
 
-const Pizza = () => {
+import PropTypes from "prop-types";
+
+const Pizza = ({ pizza }) => {
+  const { name, ingredients, imageUrl, price, ratingsAverage, reviewsQuantity } = pizza;
+
   const toCurrency = (value) => {
     return value.toLocaleString("pt-BR", {
       style: "currency",
@@ -18,16 +16,16 @@ const Pizza = () => {
 
   return (
     <PizzaCard>
-      <PizzaImage></PizzaImage>
+      <PizzaImage imageUrl={imageUrl}></PizzaImage>
 
       <PizzaInfo>
         <PizzaAbout>
-          <h3>Title</h3>
-          <p>Description</p>
+          <h3>{name}</h3>
+          <p>{ingredients}</p>
         </PizzaAbout>
 
         <PizzaReview>
-          <span>4.5</span>
+          <span>{ratingsAverage}</span>
 
           <div>
             <img src={StarFull} alt="Star" />
@@ -36,13 +34,17 @@ const Pizza = () => {
             <img src={StarFull} alt="Star" />
             <img src={StartEmpty} alt="Star" />
           </div>
-          <span>(148 Avaliações)</span>
+          <span>({reviewsQuantity} Avaliações)</span>
         </PizzaReview>
 
-        <span>{toCurrency(35.0)}</span>
+        <span>{toCurrency(price)}</span>
       </PizzaInfo>
     </PizzaCard>
   );
+};
+
+Pizza.propTypes = {
+  pizza: PropTypes.object.isRequired,
 };
 
 export default Pizza;

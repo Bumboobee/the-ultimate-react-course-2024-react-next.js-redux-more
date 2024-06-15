@@ -197,7 +197,7 @@ export const PizzaImage = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("https://burnhard-springlane-gmbh.stream.prepr.io/w_2304,format_jpg,q_70/https://burnhard-springlane-gmbh.stream.prepr.io/w_1080/4teessorvsqb-7balj02i50ez-pizza-marinara-titelbild.jpg");
+  background-image: url(${(props) => props.imageUrl});
 
   @media (max-width: 768px) {
     width: 100px;

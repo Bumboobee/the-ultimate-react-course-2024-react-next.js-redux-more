@@ -3,7 +3,7 @@ import { HeaderContainer, HeaderHolder, HeaderAbout } from "../style/global";
 const Header = () => {
   const titleText = "Noite Italiana";
   const aboutText =
-    "Cozinha Italiana Autentica. 6 pizzas para você saborear. Todos os ingredientes totalmente orgânicos diretamente da nossa hôrta.";
+    "Cozinha Italiana Autêntica. 6 pizzas para você saborear. Todos os ingredientes totalmente orgânicos diretamente da nossa horta.";
 
   return (
     <HeaderContainer>

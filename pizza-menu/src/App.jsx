@@ -2,6 +2,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import Pizza from "./components/pizza";
 
+import { Pizzas } from "./data/pizzas";
 import GlobalStyle, { GlobalContainer, PizzaContainer } from "./style/global";
 
 function App() {
@@ -13,12 +14,9 @@ function App() {
         <Header />
 
         <PizzaContainer>
-          <Pizza />
-          <Pizza />
-          <Pizza />
-          <Pizza />
-          <Pizza />
-          <Pizza />
+          {Pizzas.map((pizza) => (
+            <Pizza key={pizza.id} pizza={pizza} />
+          ))}
         </PizzaContainer>
 
         <Footer />
