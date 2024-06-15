@@ -5,11 +5,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
     background-image: radial-gradient(39.26% 39.26% at 50% 48.83%, rgba(0, 0, 0, 0.55) 0%, #000 100%), url("/assets/italian-stone-wall.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
     animation: pulseGradient 3s infinite;
 
     @media (max-width: 768px) {
