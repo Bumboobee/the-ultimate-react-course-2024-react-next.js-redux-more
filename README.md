@@ -22,6 +22,12 @@ This course is available on Udemy, a leading platform for online learning. Udemy
 
 For more information and to enroll in the course, visit the [course page on Udemy](https://www.udemy.com/course/the-ultimate-react-course).
 
+To see the live-demos, hit the links down below:
+
+[Italian Night](https://italian-night.netlify.app/) 
+
+I tried my best to refine the styling and make more beautiful than the original design, they was a little bit outdated. I hope you like it 😁!
+
 ## Who This Course Is For 🎯
 
 This course is perfect for:
