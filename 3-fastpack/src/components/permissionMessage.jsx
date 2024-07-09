@@ -35,7 +35,7 @@ const PermissionMessage = () => {
 
         <div className="flex flex-col gap-3">
           <button
-            className="text-xs text-white rounded-sm"
+            className="text-xs text-white rounded-sm bg-black"
             onClick={() => handleCookiesPermission(true)}
           >
             Permitir Cookies
