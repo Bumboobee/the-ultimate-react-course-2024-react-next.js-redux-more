@@ -83,3 +83,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideInFromRight 0.5s ease-out forwards;
+}

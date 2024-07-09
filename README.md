@@ -24,7 +24,8 @@ For more information and to enroll in the course, visit the [course page on Udem
 
 To see the live-demos, hit the links down below:
 
-[Italian Night](https://italian-night.netlify.app/) 
+[Italian Night](https://ultimate-italian-night.netlify.app/) 
+[FastPack](https://ultimate-fastpack.netlify.app/)
 
 I tried my best to refine the styling and make more beautiful than the original design, they was a little bit outdated. I hope you like it 😁!
 

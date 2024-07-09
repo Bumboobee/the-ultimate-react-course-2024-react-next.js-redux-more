@@ -2,6 +2,7 @@ import Form from "./components/form";
 import List from "./components/list";
 import Header from "./components/header";
 import Stats from "./components/footer";
+import PermissionMessage from "./components/permissionMessage";
 
 import { TravelItemProvider } from "./context/travelItemContext";
 
@@ -18,6 +19,8 @@ function App() {
           <List />
         </div>
       </section>
+
+      <PermissionMessage />
     </TravelItemProvider>
   );
 }

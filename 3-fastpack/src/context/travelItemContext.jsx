@@ -28,6 +28,8 @@ export const TravelItemProvider = ({ children }) => {
     quantity: 0,
     percentDoneItems: "0.00%",
   });
+  const [cookiesAllowed, setCookiesAllowed] = useState(false);
+  const [cookiesDecline, setCookiesDecline] = useState(false);
 
   const getStats = useCallback((travelItems) => {
     const quantity = travelItems.length;
@@ -64,6 +66,14 @@ export const TravelItemProvider = ({ children }) => {
   useEffect(() => {
     getStats(travelItems);
   }, [travelItems, getStats]);
+
+  useEffect(() => {
+    const permissionCookie = localStorage.getItem("cookiesAllowed");
+
+    if (permissionCookie) {
+      setCookiesAllowed(permissionCookie);
+    }
+  }, []);
 
   const handleErrors = useCallback(() => {
     let formIsValid = true;
@@ -197,26 +207,44 @@ export const TravelItemProvider = ({ children }) => {
     });
   }, []);
 
+  const handleCookiesPermission = useCallback((allowed) => {
+    if (allowed) {
+      setCookiesAllowed(true);
+
+      localStorage.setItem("cookiesAllowed", true);
+
+      return;
+    }
+
+    setCookiesDecline(true);
+  }, []);
+
   const value = useMemo(() => {
     return {
       formData,
       errors,
       travelItems,
       stats,
+      cookiesAllowed,
+      cookiesDecline,
       handleSubmit,
       handleInputChange,
       handleCheckItem,
       deleteItem,
+      handleCookiesPermission,
     };
   }, [
     formData,
     errors,
     travelItems,
     stats,
+    cookiesAllowed,
+    cookiesDecline,
     handleSubmit,
     handleInputChange,
     handleCheckItem,
     deleteItem,
+    handleCookiesPermission,
   ]);
 
   return (

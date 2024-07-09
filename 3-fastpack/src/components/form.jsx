@@ -5,7 +5,7 @@ import { categories } from "./../data/categories";
 import TravelItemContext from "../context/travelItemContext";
 
 const Form = () => {
-  const { formData, errors, handleSubmit, handleInputChange } =
+  const { formData, errors, cookiesAllowed, cookiesDecline, handleSubmit, handleInputChange } =
     useContext(TravelItemContext);
 
   return (
@@ -20,6 +20,7 @@ const Form = () => {
             required
             name="item"
             type="text"
+            disabled={!cookiesAllowed}
             value={formData.item}
             onChange={handleInputChange}
             placeholder="Escova de dente"
@@ -42,6 +43,7 @@ const Form = () => {
             min={1}
             max={999}
             maxLength={3}
+            disabled={!cookiesAllowed}
             value={formData.quantity}
             onChange={handleInputChange}
             placeholder={formData.quantity}
@@ -62,6 +64,7 @@ const Form = () => {
           <select
             required
             name="category"
+            disabled={!cookiesAllowed}
             value={formData.category}
             onChange={handleInputChange}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2"
@@ -85,6 +88,7 @@ const Form = () => {
         <div className="md:col-span-4 flex justify-end">
           <button
             type="submit"
+            disabled={!cookiesAllowed}
             onClick={handleSubmit}
             className="bg-blue-900 text-blue-300 hover:bg-blue-300 hover:text-blue-900 transition duration-150 ease-out hover:ease-in text-md h-10 px-2 rounded-md flex gap-2 justify-center items-center outline-none active:outline-none focus:outline-none"
           >
@@ -93,7 +97,13 @@ const Form = () => {
         </div>
       </form>
 
-      <hr className="border-gray-200" />
+      {
+        cookiesDecline ? (
+          <span className="table bg-red-200 text-red-900 text-xs font-semibold px-0.5 py-0.5 rounded align-middle mx-auto">Permita o uso dos cookies para cadastrar sua lista de viagem.</span>
+        ) : null
+      }
+
+      <hr className="border-gray-200 mt-4" />
     </>
   );
 };
