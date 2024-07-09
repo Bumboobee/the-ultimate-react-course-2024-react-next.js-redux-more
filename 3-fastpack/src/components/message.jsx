@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Message = ({ code, message }) => {
   return (
     <div
@@ -8,6 +10,11 @@ const Message = ({ code, message }) => {
       <span className="block sm:inline">{message}</span>
     </div>
   );
+};
+
+Message.propTypes = {
+  code: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 };
 
 export default Message;
